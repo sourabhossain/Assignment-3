@@ -5,14 +5,12 @@ function feetToMile(feet) {
     }
 
     var mile = feet * 0.000189394; // here 1 foot = 0.000189394 mile 
-    
+
     return mile.toFixed(10).toString() + " Mile";
 }
 
 
-var result = feetToMile(100);
-
-console.log(`Result: ${result}`);
+console.log(`Result: ${feetToMile(100)}`);
 
 
 // Wood Calculator Function
@@ -25,7 +23,7 @@ function woodCalculator(chair, table, bed) {
     var woodForTable = table * 3;
     var woodForBed = bed * 5;
     var totalWood = woodForChair + woodForTable + woodForBed;
-    
+
     if (totalWood > 1) {
         totalWood = totalWood.toString() + " Woods";
     } else {
@@ -36,9 +34,7 @@ function woodCalculator(chair, table, bed) {
 }
 
 
-var result = woodCalculator(6, 1, 2);
-
-console.log(`Result: ${result}`);
+console.log(`Result: ${woodCalculator(6, 1, 2)}`);
 
 
 // Brick Calculation Function 
@@ -64,15 +60,15 @@ function brickCalculator(buildingSize) {
         elevenToTwenty *= 10;
         twentyOneToAll = buildingSize - 20;
         buildingSize = oneToTen + elevenToTwenty + (twentyOneToAll * 10);
-        totalBricks = buildingSize * 1000; 
+        totalBricks = buildingSize * 1000;
     }
 
     return totalBricks + " Bricks";
 }
 
-var result = brickCalculator(100);
 
-console.log(`Result: ${result}`);
+console.log(`Result: ${brickCalculator(100)}`);
+
 
 // Find Smallest Friend Name From Friend Circle Function 
 function tinyFriend(friend) {
@@ -81,7 +77,7 @@ function tinyFriend(friend) {
     }
 
     var smallestName = friend[0];
-    
+
     for (var item = 0; item < friend.length; item++) {
         var element = friend[item];
 
@@ -95,6 +91,4 @@ function tinyFriend(friend) {
 
 
 var friends = ["Sourab", "Pamel", "Ebrahim", "Shreerupa", "Avishek"];
-var result = tinyFriend(friends);
-
-console.log(`Result: ${result}`);
+console.log(`Result: ${tinyFriend(friends)}`);
