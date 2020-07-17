@@ -4,9 +4,9 @@ function feetToMile(feet) {
         return "Distance can't be negative.";
     }
 
-    var mile = feet * 0.000189394; // here 1 foot = 0.000189394 mile 
+    let mile = feet * 0.000189394; // here 1 foot = 0.000189394 mile 
 
-    return mile.toFixed(10).toString() + " Mile";
+    return mile.toFixed(6).toString() + " Mile";
 }
 
 
@@ -16,13 +16,13 @@ console.log(`Result: ${feetToMile(100)}`);
 // Wood Calculator Function
 function woodCalculator(chair, table, bed) {
     if (chair < 0 || table < 0 || bed < 0) {
-        return "The number of furniture can't be negative.";
+        return "The Negative value can't be measurable.";
     }
 
-    var woodForChair = chair * 1;
-    var woodForTable = table * 3;
-    var woodForBed = bed * 5;
-    var totalWood = woodForChair + woodForTable + woodForBed;
+    let woodForChair = chair * 1;
+    let woodForTable = table * 3;
+    let woodForBed = bed * 5;
+    let totalWood = woodForChair + woodForTable + woodForBed;
 
     if (totalWood > 1) {
         totalWood = totalWood.toString() + " Woods";
@@ -39,56 +39,51 @@ console.log(`Result: ${woodCalculator(6, 1, 2)}`);
 
 // Brick Calculation Function 
 function brickCalculator(buildingSize) {
-    if (buildingSize <= 0) {
-        return "Building size can't be negative or zero.";
+    if (buildingSize < 0) {
+        return "Height can't be negative.";
     }
-
-    var oneToTen = 15;
-    var elevenToTwenty = 12;
-    var twentyOneToAll = 10;
-    var totalBricks;
+    
+    const brick = 1000;
+    let totalBricks = 0;
 
     if (buildingSize <= 10) {
-        totalBricks = buildingSize * 1000;
+        totalBricks = buildingSize * 15 * brick;
     } else if (buildingSize <= 20) {
-        oneToTen *= 10;
-        elevenToTwenty = buildingSize - 10;
-        buildingSize = oneToTen + (elevenToTwenty * 12);
-        totalBricks = buildingSize * 1000;
+        totalBricks = (10 * 15 * brick) + ((buildingSize - 10) * 12 * brick);
     } else {
-        oneToTen *= 10;
-        elevenToTwenty *= 10;
-        twentyOneToAll = buildingSize - 20;
-        buildingSize = oneToTen + elevenToTwenty + (twentyOneToAll * 10);
-        totalBricks = buildingSize * 1000;
+        totalBricks = (10 * 15 * brick) + (10 * 12 * brick) + ((buildingSize - 20) * 10 * brick);
     }
 
     return totalBricks + " Bricks";
 }
 
 
-console.log(`Result: ${brickCalculator(100)}`);
+console.log(`Result: ${brickCalculator(21)}`);
 
 
-// Find Smallest Friend Name From Friend Circle Function 
+// Find tiny Friend Name From Friend Circle Function 
 function tinyFriend(friend) {
     if (friend.length == 0) {
         return "Friend list is empty.";
     }
 
-    var smallestName = friend[0];
+    let tinyName = friend[0];
 
-    for (var item = 0; item < friend.length; item++) {
-        var element = friend[item];
+    for (let item = 0; item < friend.length; item++) {
+        let element = friend[item];
 
-        if (element.length < smallestName.length) {
-            smallestName = element;
+        if (element.length <= tinyName.length) {
+            tinyName = element;
+
+            if (tinyName.length == 0) {
+                return "Provide a name, please.";
+            }
         }
     }
 
-    return smallestName;
+    return tinyName;
 }
 
 
-var friends = ["Sourab", "Pamel", "Ebrahim", "Shreerupa", "Avishek"];
+let friends = ["Sourab", "Pamel", "Ebrahim", "Shreerupa", "Avishek"];
 console.log(`Result: ${tinyFriend(friends)}`);
