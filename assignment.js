@@ -26,7 +26,13 @@ function woodCalculator(chair, table, bed) {
     var woodForBed = bed * 5;
     var totalWood = woodForChair + woodForTable + woodForBed;
     
-    return totalWood.toString() + " Wood";
+    if (totalWood > 1) {
+        totalWood = totalWood.toString() + " Woods";
+    } else {
+        totalWood = totalWood.toString() + " Wood"
+    }
+
+    return totalWood;
 }
 
 
