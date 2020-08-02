@@ -62,15 +62,15 @@ console.log(`Result: ${brickCalculator(21)}`);
 
 
 // Find tiny Friend Name From Friend Circle Function 
-function tinyFriend(friend) {
-    if (friend.length == 0) {
+function tinyFriend(friends) {
+    if (friends.length == 0) {
         return "Friend list is empty.";
     }
 
-    let tinyName = friend[0];
+    let tinyName = friends[0];
 
-    for (let item = 0; item < friend.length; item++) {
-        let element = friend[item];
+    for (let item = 0; item < friends.length; item++) {
+        let element = friends[item];
 
         if (element.length <= tinyName.length) {
             tinyName = element;
